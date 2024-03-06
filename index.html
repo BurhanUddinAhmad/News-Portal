@@ -9,16 +9,43 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <header class="h-20 px-32 mx-auto bg-base-300">
+<body class="bg-gray-100">
+    <header class="h-20 px-32 mx-auto mb-12 bg-base-300">
         <nav id="category-container" class="h-full flex justify-between items-center gap-6">
             <div><button onclick="" class="btn">Politics</button></div>
         </nav>
     </header>
 
-    <main></main>
+    <main class="px-32 mx-auto bg-gray-100">
+     <section class="mb-12">
+           <!-- Search bar -->
+        <label class="input w-96 mx-auto input-bordered flex items-center gap-2">
+            <input id="input-field" type="text" class="grow" placeholder="Search" />
+            <button onclick="" class="badge p-5 rounded-lg text-white hover:bg-blue-500 relative left-3 badge-info">Search</button>
+        </label>
+     </section>
 
-    <footer></footer>
+     <section class="mb-12">
+        <div>
+            <div class="card card-side bg-base-100 shadow-xl">
+                <figure><img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie"/></figure>
+                <div class="card-body">
+                  <h2 class="card-title">New movie is released!</h2>
+                  <p>Click the button to watch on Jetflix app.</p>
+                  <div class="card-actions justify-end">
+                    <button class="btn btn-primary">Watch</button>
+                  </div>
+                </div>
+              </div>
+        </div>
+     </section>
+    </main>
+
+    <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+        <aside>
+          <p>Copyright © 2024 - All right reserved by News Portal</p>
+        </aside>
+    </footer>
 
 
     <!-- External JS -->
