@@ -46,5 +46,12 @@ const loadNews = async(categoryId="08") => {
     // console.log(newsData.data);
 }
 
+const searchHandler = () => {
+  const inputField = document.getElementById('input-field');
+  const searchText = inputField.value;
+  loadNews(searchText);
+}
+
+
 loadNews();
 loadCategory();
