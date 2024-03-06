@@ -6,11 +6,12 @@ const loadCategory = async() => {
     allNews.data.news_category.forEach((news)=>{
         // console.log(news.category_name);
         const div = document.createElement('div');
-        div.innerHTML = `<button onclick="loadNews('${news.category_id}')" class="btn">${news.category_name}</button>`;
+        div.innerHTML = `<button onclick="loadNews('${news.category_id}'), loadingSpinner(true)" class="btn">${news.category_name}</button>`;
         
         categoryContainer.appendChild(div);
     });
-    
+    loadingSpinner(false);
+
     // console.log(allNews.data.news_category);
 }
 
@@ -43,15 +44,25 @@ const loadNews = async(categoryId="08") => {
         newsContainer.appendChild(div);
     });
 
+    loadingSpinner(false);
     // console.log(newsData.data);
 }
 
 const searchHandler = () => {
   const inputField = document.getElementById('input-field');
   const searchText = inputField.value;
+  loadingSpinner(true);
   loadNews(searchText);
 }
 
+const loadingSpinner = (isLoading) => {
+  const getLoadingSpinner = document.getElementById('loading-spinner');
+    if(isLoading) {
+      getLoadingSpinner.classList.remove('hidden');
+    }else {
+      getLoadingSpinner.classList.add('hidden');
+    }
+}
 
 loadNews();
 loadCategory();
